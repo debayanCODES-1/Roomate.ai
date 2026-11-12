@@ -1,0 +1,21 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: roommate-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: roommate
+      POSTGRES_USER: roommate
+      POSTGRES_PASSWORD: roommate_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - roommate_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U roommate -d roommate"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  roommate_pgdata:

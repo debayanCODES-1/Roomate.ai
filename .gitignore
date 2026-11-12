@@ -1,0 +1,17 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.next/
+node_modules/
+frontend/.env.local
+*.log
+*.iml
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+mobile/android/local.properties
+mobile/android/key.properties
+mobile/ios/Flutter/Generated.xcconfig
+mobile/ios/Flutter/flutter_export_environment.sh
